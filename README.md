@@ -51,6 +51,6 @@ The SQL schema is available in the `/database` folder.
 3. Update database credentials in the Java file.
 4. Compile and run:
   javac FraudDetectionEngine.java
-  java FraudDetectionEngine
+        java FraudDetectionEngine
 5. View transaction records in MySQL Workbench.
 
