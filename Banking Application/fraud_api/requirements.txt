@@ -1,0 +1,9 @@
+fastapi         # create the api server
+uvicorn         # run the FastAPI application
+pandas          # handle transaction data
+numpy           # numerical operations
+scikit-learn    # model utilities used during training
+xgboost         # trained fraud detection model
+joblib          # load the saved model and feature names
+pydantic        # request/response validation
+python-multipart # form data support

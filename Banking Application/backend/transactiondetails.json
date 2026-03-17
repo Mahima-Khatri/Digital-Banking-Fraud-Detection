@@ -1,0 +1,22 @@
+[
+  {
+    "user_id": "U101",
+    "name": "Ramya",
+    "mobile_number": "9876543210",
+    "email": "ramya@gmail.com",
+    "location": "Guntur",
+    "registration_status": "SUCCESS"
+  },
+  {
+    "user_id": "U101",
+    "mobile_number": "9876543210",
+    "amount": 45000,
+    "transaction_status": "SUCCESS"
+  },
+  {
+    "user_id": "U101",
+    "mobile_number": "9876543210",
+    "amount": 75000,
+    "transaction_status": "FRAUD ALERT"
+  }
+]
