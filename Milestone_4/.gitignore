@@ -1,0 +1,5 @@
+
+# ML generated artifacts
+ml-service/fraud_test_model.pkl
+ml-service/__pycache__/
+

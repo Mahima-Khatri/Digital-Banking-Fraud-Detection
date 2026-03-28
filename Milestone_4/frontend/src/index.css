@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+@import "./App.css";
+
+@layer base {
+  :root {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 14%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 14%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 221 68% 48%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 222 20% 18%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 20% 22%;
+    --muted-foreground: 215 15% 55%;
+    --accent: 210 80% 55%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 210 40% 98%;
+    --success: 142 60% 45%;
+    --success-foreground: 210 40% 98%;
+    --warning: 32 80% 50%;
+    --warning-foreground: 210 40% 98%;
+    --border: 217 20% 22%;
+    --input: 217 20% 22%;
+    --ring: 221 68% 48%;
+    --radius: 0.5rem;
+  }
+
+  .light {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 221 68% 48%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 210 40% 90%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 90%;
+    --muted-foreground: 215 15% 40%;
+    --accent: 210 80% 55%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 142 60% 40%;
+    --success-foreground: 0 0% 98%;
+    --warning: 32 80% 45%;
+    --warning-foreground: 0 0% 98%;
+    --border: 214 32% 85%;
+    --input: 214 32% 85%;
+    --ring: 221 68% 48%;
+    --radius: 0.5rem;
+  }
+}
+
+@theme {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-success: hsl(var(--success));
+  --color-success-foreground: hsl(var(--success-foreground));
+  --color-warning: hsl(var(--warning));
+  --color-warning-foreground: hsl(var(--warning-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow-x: hidden;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+  }
+}
+
+.glass-card {
+  @apply bg-card/60 backdrop-blur-xl border border-border/40 rounded-xl;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.btn-primary {
+  @apply bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2.5 rounded-lg font-medium transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer;
+}
+
+.btn-secondary {
+  @apply bg-secondary hover:bg-secondary/80 text-secondary-foreground px-6 py-2.5 rounded-lg font-medium transition-all duration-200 cursor-pointer;
+}
+
+.custom-marker {
+  background: none !important;
+  border: none !important;
+}
+
+@keyframes live-pulse {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.animate-live-pulse {
+  animation: live-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes row-highlight {
+  0% { background-color: transparent; }
+  10% { background-color: hsl(var(--primary) / 0.15); box-shadow: inset 0 0 10px hsl(var(--primary) / 0.1); }
+  100% { background-color: transparent; }
+}
+
+.animate-row-highlight {
+  animation: row-highlight 3s ease-out;
+}
