@@ -320,9 +320,8 @@ npm run dev
 
 ## 👨‍💻 Author
 
-**B.N. Meenakshi**
+**Mahima Khatri**
 B.Tech Final Year
-Full Stack Developer | Data Analytics Enthusiast
 
 ---
 
